@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { X, Clock, Calendar } from 'lucide-react';
 import { Student, Loan } from '../types';

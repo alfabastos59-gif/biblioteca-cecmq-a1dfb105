@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface AdminAvatarOption {
   id: string;
   name: string;

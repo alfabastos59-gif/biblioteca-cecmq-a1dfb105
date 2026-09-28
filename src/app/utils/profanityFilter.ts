@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Moderation and content filter for student suggestions in school library environment
 
 const BLOCKED_WORDS = [

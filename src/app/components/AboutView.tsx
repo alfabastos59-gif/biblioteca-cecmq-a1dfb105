@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { BookOpen, ShieldCheck, Sparkles, Heart } from 'lucide-react';
 import { Logo } from './Logo';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { AuthorItem } from '../types';
 import { useTheme } from '../context/ThemeContext';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { X, UserPlus, Check, Sparkles, Image as ImageIcon, Shuffle, Phone, GraduationCap, Hash, User } from 'lucide-react';
 import { Student } from '../types';

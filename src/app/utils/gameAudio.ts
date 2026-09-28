@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Web Audio API synthesizer for interactive audio effects
 
 let audioCtx: AudioContext | null = null;

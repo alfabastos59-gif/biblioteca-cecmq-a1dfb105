@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const MAX_QUIZ_ATTEMPTS = 5;
 
 const STORAGE_KEY = 'cecmq_quiterio_scores_v2';

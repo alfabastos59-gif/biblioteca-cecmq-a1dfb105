@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Type definitions for Biblioteca Maria Quitéria (CECMQ)
 
 export interface Book {

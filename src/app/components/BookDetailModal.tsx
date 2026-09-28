@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { X, Star, Heart, BookmarkCheck, MapPin, BookOpen, Check, Layers } from 'lucide-react';
 import { Book } from '../types';

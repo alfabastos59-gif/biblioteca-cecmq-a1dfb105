@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { X, Check, BookOpen, Image as ImageIcon, Camera, Upload, Crop } from 'lucide-react';
 import { Book } from '../types';

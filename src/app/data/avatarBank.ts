@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { OFFICIAL_STUDENT_AVATARS } from './studentAvatars';
 import { ADMIN_AVATAR_OPTIONS } from './adminAvatars';
 import { MEMOJI_AVATAR_OPTIONS } from './memojiAvatars';

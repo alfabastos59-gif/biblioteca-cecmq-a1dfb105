@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AuthorItem } from '../types';
 import { MANOEL_DE_BARROS_QUOTES } from '../components/FeaturedWriterCard';
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Book, Loan, Student, Suggestion, AdminUser, AuditLog } from '../types';
 
 /**

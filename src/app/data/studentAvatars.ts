@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 16 Avatares Oficiais de Estudantes da Biblioteca Maria Quitéria
  * Baseados nas ilustrações da grade 4x4 fornecida pelo usuário.

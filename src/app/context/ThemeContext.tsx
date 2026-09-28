@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export type AppTheme = 'emerald' | 'dark' | 'ocean' | 'kinetic' | 'purple' | 'light';

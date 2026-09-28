@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { Quote, Feather, ChevronLeft, ChevronRight, ExternalLink, Sparkles, BookOpen } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';

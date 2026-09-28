@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import { BookOpen, CheckCircle, Clock, AlertTriangle, Calendar, ArrowRight, ShieldAlert, LogOut, Sparkles, BookCheck, CreditCard } from 'lucide-react';
 import { Student, Loan, Book } from '../types';

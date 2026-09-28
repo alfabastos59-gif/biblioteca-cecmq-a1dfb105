@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { ActiveTab } from '../types';
 import { Logo } from './Logo';

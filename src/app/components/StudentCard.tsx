@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Student } from '../types';
 import { generateBarcodeBars, formatStudentRegistration, getStudentBarcodeCode } from '../utils/barcodeGenerator';

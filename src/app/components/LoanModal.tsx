@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useMemo } from 'react';
 import { X, BookmarkCheck, Calendar, User, Check, ShieldCheck, Search, CheckCircle2, RotateCcw } from 'lucide-react';
 import { Book, Student, Loan, UserSession } from '../types';

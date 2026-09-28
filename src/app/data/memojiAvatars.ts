@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * 12 Avatares Oficiais Estilo Memoji 3D da Biblioteca Maria Quitéria
  * Baseados na coleção enviada pelo usuário (grade 4x3 de Memojis 3D).

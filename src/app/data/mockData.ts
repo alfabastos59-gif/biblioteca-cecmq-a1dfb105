@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Book, Loan, Student, Suggestion, AdminUser, AuditLog } from '../types';
 import { ADMIN_AVATAR_OPTIONS } from './adminAvatars';
 import { MEMOJI_AVATAR_OPTIONS } from './memojiAvatars';

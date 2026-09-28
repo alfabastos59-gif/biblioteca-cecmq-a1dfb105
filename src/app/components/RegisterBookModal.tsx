@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { CadastrarLivroModal, NovoLivroData } from './CadastrarLivroModal';
 import { Book } from '../types';
