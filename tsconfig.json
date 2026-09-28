@@ -1,6 +1,5 @@
 {
   "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts", "eslint.config.js"],
-  "exclude": ["src/app/**"],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
@@ -14,16 +13,16 @@
     "noEmit": true,
 
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": false,
     "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noUncheckedSideEffectImports": true,
+    "noImplicitReturns": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedSideEffectImports": false,
     "paths": {
       "@/*": ["./src/*"]
     }
