@@ -131,12 +131,21 @@ export const CadastrarLivroModal: React.FC<CadastrarLivroModalProps> = ({
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       mediaStreamRef.current = stream;
 
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        await videoRef.current.play();
-      }
-
       setIsCameraActive(true);
+
+      // Aguarda o elemento de vídeo ser renderizado e conecta o fluxo
+      const attach = async (tries = 0) => {
+        const v = videoRef.current;
+        if (!v) {
+          if (tries < 30) requestAnimationFrame(() => attach(tries + 1));
+          return;
+        }
+        v.setAttribute('playsinline', 'true');
+        v.muted = true;
+        v.srcObject = stream;
+        try { await v.play(); } catch (e) { console.warn('play()', e); }
+      };
+      attach();
     } catch (err: any) {
       console.error('Erro ao acessar a câmera:', err);
       let errorMsg = 'Não foi possível acessar a câmera. Verifique as permissões.';
