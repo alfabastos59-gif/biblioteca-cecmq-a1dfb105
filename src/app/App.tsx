@@ -14,7 +14,6 @@ import { DesignSystemModal } from './components/DesignSystemModal';
 import { LoanModal } from './components/LoanModal';
 import { ManageBooksModal } from './components/ManageBooksModal';
 import { RegisterBookModal } from './components/RegisterBookModal';
-import { MouseTrailCanvas } from './components/MouseTrailCanvas';
 import { AuthModal } from './components/AuthModal';
 import { StudentPortalView } from './components/StudentPortalView';
 import { RankingView } from './components/RankingView';
@@ -942,10 +941,6 @@ export default function App() {
           : 'bg-[#00101c] text-slate-100 selection:bg-emerald-500 selection:text-slate-950'
       }`}
     >
-      {/* Efeito de Rastro do Mouse (Patinhas) na Página Inicial e no Catálogo */}
-      {(activeTab === 'inicio' || activeTab === 'catalogo') && (
-        <MouseTrailCanvas enabled={true} effectType="patinhas" particleDensity={2} glowIntensity={1.0} />
-      )}
 
       {/* Global Header */}
       <Header
