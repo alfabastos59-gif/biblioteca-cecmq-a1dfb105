@@ -178,6 +178,11 @@ export default function App() {
   const [isAccessibilityModalOpen, setIsAccessibilityModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Banco de dados de autores na nuvem
+  useEffect(() => {
+    import('./data/authorsData').then((m) => m.startAuthorsCloudSync());
+  }, []);
+
   // Persist state to localStorage
   useEffect(() => {
     localStorage.setItem('bmq_books', JSON.stringify(books));
