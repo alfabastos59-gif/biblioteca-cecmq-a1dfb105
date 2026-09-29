@@ -941,9 +941,6 @@ export default function App() {
           : 'bg-[#00101c] text-slate-100 selection:bg-emerald-500 selection:text-slate-950'
       }`}
     >
-      {/* Efeito de Rastro do Mouse (Patinhas) na Página Inicial e no Catálogo */}
-      {(activeTab === 'inicio' || activeTab === 'catalogo') && (
-      )}
 
       {/* Global Header */}
       <Header
