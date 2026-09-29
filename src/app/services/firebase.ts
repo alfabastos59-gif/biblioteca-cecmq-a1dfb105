@@ -405,3 +405,38 @@ export async function pushAllLocalDataToCloud(data: {
     return { success: false, error: error?.message || 'Falha ao sincronizar' };
   }
 }
+
+// ============================================================================
+// AUTORES - Banco de dados na nuvem (coleção "authors")
+// Guarda todas as informações e a foto (link ou imagem enviada) de cada autor.
+// ============================================================================
+
+export function subscribeToAuthors(
+  onSuccess: (authors: any[]) => void,
+  onError?: (err: Error) => void
+): () => void {
+  return onSnapshot(
+    collection(db, 'authors'),
+    (snapshot) => {
+      const list: any[] = [];
+      snapshot.forEach((d) => list.push(d.data()));
+      list.sort((a, b) => String(a.createdAt || '').localeCompare(String(b.createdAt || '')));
+      onSuccess(list);
+    },
+    (err) => {
+      console.error('Erro ao sincronizar autores:', err);
+      if (onError) onError(err);
+    }
+  );
+}
+
+export async function syncAuthorsToCloud(authors: any[]): Promise<void> {
+  const snap = await getDocs(collection(db, 'authors'));
+  const keep = new Set(authors.map((a) => a.id));
+  await Promise.all(
+    snap.docs.filter((d) => !keep.has(d.id)).map((d) => deleteDoc(d.ref))
+  );
+  await commitInBatches(
+    authors.map((a) => ({ ref: doc(db, 'authors', a.id), data: a }))
+  );
+}
