@@ -1,26 +1,20 @@
-# Biblioteca 2909
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-Crie o projeto a partir dos arquivos enviados, sem alterar nada, e me ajude a publicá-lo.
+# Run and deploy your AI Studio app
 
-This project was built with [Lovable](https://lovable.dev).
+This contains everything you need to run your app locally.
 
-**Live app**: https://biblioteca-cecmq.lovable.app
+View your app in AI Studio: https://ai.studio/apps/d540fce5-4893-493d-928c-e0717a792a29
 
-## Build with Lovable
+## Run Locally
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1a1389e1-e0bc-4ac9-a25e-4153f7a89755).
+**Prerequisites:**  Node.js
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
