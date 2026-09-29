@@ -464,8 +464,42 @@ const STORAGE_KEY = 'cecmq_featured_authors';
 const PINNED_STORAGE_KEY = 'cecmq_pinned_author_id';
 const CUSTOM_EVENT_NAME = 'cecmq_authors_updated';
 
+let cloudStarted = false;
+let applyingCloud = false;
+
+// Liga a sincronização com o banco de dados de autores na nuvem (uma única vez)
+export function startAuthorsCloudSync() {
+  if (cloudStarted || typeof window === 'undefined') return;
+  cloudStarted = true;
+  import('../services/firebase')
+    .then(({ subscribeToAuthors, syncAuthorsToCloud }) => {
+      let first = true;
+      subscribeToAuthors((list) => {
+        if (first && list.length === 0) {
+          first = false;
+          // Banco vazio: envia os autores atuais para a nuvem
+          syncAuthorsToCloud(getStoredAuthors()).catch((e) =>
+            console.error('Erro ao enviar autores para a nuvem:', e)
+          );
+          return;
+        }
+        first = false;
+        if (list.length === 0) return;
+        applyingCloud = true;
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+          window.dispatchEvent(new Event(CUSTOM_EVENT_NAME));
+        } finally {
+          applyingCloud = false;
+        }
+      });
+    })
+    .catch((e) => console.error('Erro ao iniciar banco de autores:', e));
+}
+
 export function getStoredAuthors(): AuthorItem[] {
   if (typeof window === 'undefined') return DEFAULT_AUTHORS;
+  startAuthorsCloudSync();
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
@@ -532,6 +566,11 @@ export function saveStoredAuthors(authors: AuthorItem[]): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(authors));
     window.dispatchEvent(new Event(CUSTOM_EVENT_NAME));
+    if (!applyingCloud) {
+      import('../services/firebase')
+        .then(({ syncAuthorsToCloud }) => syncAuthorsToCloud(authors))
+        .catch((e) => console.error('Erro ao salvar autores na nuvem:', e));
+    }
   } catch (e) {
     console.error('Erro ao salvar autores no localStorage:', e);
   }
