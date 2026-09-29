@@ -468,7 +468,7 @@ let cloudStarted = false;
 let applyingCloud = false;
 
 // Liga a sincronização com o banco de dados de autores na nuvem (uma única vez)
-function startAuthorsCloudSync() {
+export function startAuthorsCloudSync() {
   if (cloudStarted || typeof window === 'undefined') return;
   cloudStarted = true;
   import('../services/firebase')
