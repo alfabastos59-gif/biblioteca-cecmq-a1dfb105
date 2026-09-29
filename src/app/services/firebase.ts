@@ -420,7 +420,6 @@ export function subscribeToAuthors(
     (snapshot) => {
       const list: any[] = [];
       snapshot.forEach((d) => list.push(d.data()));
-      console.log('[AUTHORS_DEBUG]', list.length, snapshot.metadata.fromCache);
       list.sort((a, b) => String(a.createdAt || '').localeCompare(String(b.createdAt || '')));
       onSuccess(list);
     },
