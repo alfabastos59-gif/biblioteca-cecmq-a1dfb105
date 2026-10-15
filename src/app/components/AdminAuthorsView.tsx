@@ -58,6 +58,11 @@ export const AdminAuthorsView: React.FC<{ books?: Book[] }> = ({ books = [] }) =
   const [authors, setAuthors] = useState<AuthorItem[]>(() => getStoredAuthors());
   const [pinnedId, setPinnedId] = useState<string | null>(() => getPinnedAuthorId());
   const [searchQuery, setSearchQuery] = useState("");
+  const [nationalityFilter, setNationalityFilter] = useState("");
+  const nationalities = useMemo(
+    () => Array.from(new Set(authors.map((a) => a.nationality || "Brasileira"))).sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [authors],
+  );
   const [activeFilter, setActiveFilter] = useState<FilterTab>("todos");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
 
@@ -114,6 +119,7 @@ export const AdminAuthorsView: React.FC<{ books?: Book[] }> = ({ books = [] }) =
       if (activeFilter === "ativos" && author.active === false) return false;
       if (activeFilter === "inativos" && author.active !== false) return false;
       if (activeFilter === "destaque" && author.id !== weeklyInfo.author?.id) return false;
+      if (nationalityFilter && (author.nationality || "Brasileira") !== nationalityFilter) return false;
 
       // Filtro por busca com suporte completo a acentos e minúsculas
       if (!searchQuery.trim()) return true;
@@ -497,6 +503,29 @@ export const AdminAuthorsView: React.FC<{ books?: Book[] }> = ({ books = [] }) =
             <RotateCcw className="w-3.5 h-3.5" />
             <span className="hidden md:inline">Restaurar Padrões</span>
           </button>
+
+          <input ref={csvInputRef} type="file" accept=".csv,text/csv" className="hidden" onChange={handleCsvFileUpload} />
+          <button
+            type="button"
+            onClick={() => csvInputRef.current?.click()}
+            className={`px-3.5 py-2.5 rounded-2xl text-xs font-semibold border cursor-pointer ${isDark ? "border-white/10 hover:bg-white/10 text-slate-300" : "border-slate-200 hover:bg-slate-100 text-slate-700"}`}
+          >
+            Importar CSV
+          </button>
+          <button
+            type="button"
+            onClick={handleImportOfficialBrazilians}
+            className={`px-3.5 py-2.5 rounded-2xl text-xs font-semibold border cursor-pointer ${isDark ? "border-white/10 hover:bg-white/10 text-slate-300" : "border-slate-200 hover:bg-slate-100 text-slate-700"}`}
+          >
+            Importar 86 autores brasileiros
+          </button>
+          <button
+            type="button"
+            onClick={handleExportCsv}
+            className={`px-3.5 py-2.5 rounded-2xl text-xs font-semibold border cursor-pointer ${isDark ? "border-white/10 hover:bg-white/10 text-slate-300" : "border-slate-200 hover:bg-slate-100 text-slate-700"}`}
+          >
+            Exportar CSV
+          </button>
         </div>
 
         {/* Alternância de Visualização e Busca */}
@@ -528,6 +557,18 @@ export const AdminAuthorsView: React.FC<{ books?: Book[] }> = ({ books = [] }) =
               <List className="w-4 h-4" />
             </button>
           </div>
+
+          <select
+            value={nationalityFilter}
+            onChange={(e) => setNationalityFilter(e.target.value)}
+            title="Filtrar por nacionalidade"
+            className={`py-2 px-3 rounded-xl text-xs border ${isDark ? "bg-black/30 border-white/15 text-white" : "bg-white border-slate-300 text-slate-900"}`}
+          >
+            <option value="">Todas as nacionalidades</option>
+            {nationalities.map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
 
           {/* Campo de Busca */}
           <div className="relative w-full sm:w-64">
