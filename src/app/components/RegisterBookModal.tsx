@@ -1,31 +1,27 @@
 // @ts-nocheck
-import React from 'react';
-import { CadastrarLivroModal, NovoLivroData } from './CadastrarLivroModal';
-import { Book } from '../types';
+import React from "react";
+import { CadastroLivroDialog } from "./CadastroLivroDialog";
+import { Book } from "../types";
 
 export interface RegisterBookModalProps {
   isOpen: boolean;
   onClose: () => void;
   onRegisterBook: (book: Book) => void;
-  onSave?: (livro: NovoLivroData) => void;
+  existingBooks?: Book[];
 }
 
 export const RegisterBookModal: React.FC<RegisterBookModalProps> = ({
   isOpen,
   onClose,
   onRegisterBook,
-  onSave,
-}) => {
-  return (
-    <CadastrarLivroModal
-      isOpen={isOpen}
-      onClose={onClose}
-      onSave={onSave}
-      onRegisterBook={onRegisterBook}
-    />
-  );
-};
+  existingBooks,
+}) => (
+  <CadastroLivroDialog
+    isOpen={isOpen}
+    onClose={onClose}
+    onRegisterBook={onRegisterBook}
+    existingBooks={existingBooks}
+  />
+);
 
 export default RegisterBookModal;
-export { CadastrarLivroModal };
-export type { NovoLivroData };
