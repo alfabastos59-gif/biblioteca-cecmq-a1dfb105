@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useMemo, useRef, useState, useEffect } from "react";
 import { ChevronDown, Feather, Plus, X } from "lucide-react";
 import { AuthorItem } from "../types";

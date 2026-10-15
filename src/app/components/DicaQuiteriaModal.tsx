@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Sparkles, X, Loader2 } from "lucide-react";

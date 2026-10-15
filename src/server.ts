@@ -58,7 +58,7 @@ async function handleGeminiQuiz(request: Request): Promise<Response> {
     const nivel = Number(body.nivel) || 1;
     const totalPerguntas = Number(body.totalPerguntas) || 5;
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env["GEMINI_API_KEY"];
     if (!apiKey) {
       console.warn("[Gemini API] GEMINI_API_KEY não configurada no servidor. Retornando fallback estruturado.");
       return new Response(JSON.stringify(getFallbackQuestion(livroTitulo, autor, nivel, totalPerguntas)), {

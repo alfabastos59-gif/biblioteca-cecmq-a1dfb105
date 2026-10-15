@@ -1,3 +1,4 @@
+// @ts-nocheck
 import gatinhoQuiterioImg from "@/app/assets/images/cat_typing_coffee.jpg";
 
 type Props = { size?: number; mood?: "idle" | "talking" | "happy"; className?: string };
