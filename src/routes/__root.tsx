@@ -6,7 +6,6 @@ import {
   useRouter,
   HeadContent,
   Scripts,
-  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -35,12 +34,13 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: ErrorComponentProps) {
-  console.error(error);
+function ErrorComponent({ error: rawError, reset }: { error: unknown; reset: () => void }) {
   const router = useRouter();
   useEffect(() => {
+    const error = rawError instanceof Error ? rawError : new Error(String(rawError));
+    console.error(error);
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+  }, [rawError]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -84,12 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Merriweather:wght@700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Merriweather:wght@700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rubik:wght@500;600;700;800;900&display=swap",
       },
     ],
   }),
@@ -99,11 +99,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
-const VLIBRAS_INIT = `window.addEventListener('load', function () {
-  try { if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); } }
-  catch (e) { console.warn('VLibras widget failed to initialize:', e); }
-});`;
-
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
@@ -112,15 +107,6 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body className="bg-[#001424] text-slate-100 font-['Poppins',sans-serif] antialiased selection:bg-emerald-500 selection:text-white">
         {children}
-        <div
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html:
-              '<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>',
-          }}
-        />
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js" />
-        <script dangerouslySetInnerHTML={{ __html: VLIBRAS_INIT }} />
         <Scripts />
       </body>
     </html>
