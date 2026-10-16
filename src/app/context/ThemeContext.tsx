@@ -39,14 +39,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Tema fixo em roxo
   };
 
-  // Tema fixo: Roxo Escuro Criativo
-  const isDark = true;
+  // Tema fixo: Alegre (fundo creme, verde-água e amarelo)
+  const isDark = false;
   const isEmerald = false;
   const isPurple = true;
   const isKinetic = false;
   const isClassicDark = false;
   const isOcean = false;
-  const isLight = false;
+  const isLight = true;
 
   return (
     <ThemeContext.Provider
@@ -72,13 +72,13 @@ const defaultThemeValue: ThemeContextType = {
   theme: "purple",
   setTheme: () => {},
   toggleTheme: () => {},
-  isDark: true,
+  isDark: false,
   isKinetic: false,
   isClassicDark: false,
   isOcean: false,
   isPurple: true,
   isEmerald: false,
-  isLight: false,
+  isLight: true,
 };
 
 export const useTheme = () => {
