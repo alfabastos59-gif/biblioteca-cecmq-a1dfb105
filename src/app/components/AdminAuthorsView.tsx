@@ -158,7 +158,7 @@ export const AdminAuthorsView: React.FC<{ books?: Book[] }> = ({ books = [] }) =
     return list.sort((a, b) =>
       a.name.localeCompare(b.name, "pt-BR", { sensitivity: "base" }),
     );
-  }, [authors, searchQuery, activeFilter, weeklyInfo.author?.id]);
+  }, [authors, searchQuery, activeFilter, nationalityFilter, weeklyInfo.author?.id]);
 
   const getAssociatedBookCount = (author: AuthorItem) => books.filter((book) => {
     if (book.authorIds?.includes(author.id) || book.authorId === author.id) return true;
