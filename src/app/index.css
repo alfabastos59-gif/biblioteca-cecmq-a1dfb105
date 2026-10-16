@@ -102,3 +102,36 @@
 .rounded-2xl {
   box-shadow: 0 6px 18px -8px rgba(120, 90, 20, 0.12);
 }
+
+/* ---- Ajustes finos do banner e cartões da página inicial ---- */
+.bg-\[\#16082d\],
+.bg-\[\#250f4f\],
+.bg-\[\#15072b\] {
+  background-color: #ffffff;
+}
+
+.border-\[\#3d196f\],
+.border-\[\#3e196e\]\/60 {
+  border-color: #e9e2cf;
+}
+
+.text-purple-200\/90 {
+  color: #0f766e;
+}
+
+.text-\[\#c084fc\] {
+  color: #0d9488;
+}
+
+/* Título em degradê: rosa/roxo -> verde-água */
+.via-fuchsia-400 {
+  --tw-gradient-via: #2dd4bf;
+}
+.to-pink-300 {
+  --tw-gradient-to: #0d9488;
+}
+
+/* Sombras fortes de brilho escuro viram sombras suaves */
+.hover\:shadow-\[0_12px_25px_rgba\(0\,0\,0\,0.5\)\,0_0_15px_rgba\(168\,85\,247\,0.3\)\]:hover {
+  box-shadow: 0 12px 25px rgba(120, 90, 20, 0.15);
+}
