@@ -25,10 +25,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     localStorage.setItem("bmq_theme", "purple");
     const root = document.documentElement;
-    root.classList.remove("light", "kinetic", "ocean", "emerald");
-    root.classList.add("purple", "dark");
-    document.body.style.backgroundColor = "#13072b";
-    document.body.style.color = "#f5f3ff";
+    root.classList.remove("light", "kinetic", "ocean", "emerald", "dark");
+    root.classList.add("purple");
+    document.body.style.backgroundColor = "#fdf6e9";
+    document.body.style.color = "#1e293b";
   }, []);
 
   const toggleTheme = () => {
@@ -39,14 +39,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Tema fixo em roxo
   };
 
-  // Tema fixo: Roxo Escuro Criativo
-  const isDark = true;
+  // Tema fixo: Alegre (fundo creme, verde-água e amarelo)
+  const isDark = false;
   const isEmerald = false;
   const isPurple = true;
   const isKinetic = false;
   const isClassicDark = false;
   const isOcean = false;
-  const isLight = false;
+  const isLight = true;
 
   return (
     <ThemeContext.Provider
@@ -72,13 +72,13 @@ const defaultThemeValue: ThemeContextType = {
   theme: "purple",
   setTheme: () => {},
   toggleTheme: () => {},
-  isDark: true,
+  isDark: false,
   isKinetic: false,
   isClassicDark: false,
   isOcean: false,
   isPurple: true,
   isEmerald: false,
-  isLight: false,
+  isLight: true,
 };
 
 export const useTheme = () => {

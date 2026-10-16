@@ -1033,7 +1033,7 @@ export default function App() {
         isEmerald
           ? "bg-[#021726] text-slate-100 selection:bg-[#00e676] selection:text-slate-950"
           : isPurple
-            ? "bg-[#13072b] text-slate-100 selection:bg-purple-500 selection:text-white"
+            ? "bg-[#fdf6e9] text-slate-800 selection:bg-amber-300 selection:text-slate-900"
             : isKinetic
               ? "bg-[#0c1014] text-slate-100 selection:bg-[#0088cc] selection:text-white"
               : isOcean
