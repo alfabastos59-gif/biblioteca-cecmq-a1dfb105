@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
         isEmerald
           ? "bg-[#021726]/95 border-[#072d42] text-slate-100"
           : isPurple
-            ? "bg-[#13072b]/95 border-[#3e196e] text-purple-100"
+            ? "bg-gradient-to-r from-[#14b8a6] to-[#0d9488] border-[#0f766e] text-white"
             : isKinetic
               ? "bg-[#0c1014]/95 border-[#2a313a] text-slate-100"
               : isDark
@@ -124,7 +124,7 @@ export const Header: React.FC<HeaderProps> = ({
               isEmerald
                 ? "bg-[#031c2e]/90 border-[#093a57] shadow-[0_0_20px_rgba(2,23,38,0.7)]"
                 : isPurple
-                  ? "bg-[#1a0933]/90 border-[#32145e] shadow-[0_0_20px_rgba(26,9,51,0.6)]"
+                  ? "bg-white/20 border-white/30 shadow-sm"
                   : isKinetic
                     ? "bg-[#1a1c1e] border-[#2a313a]"
                     : isDark
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
                   ? isEmerald
                     ? "bg-[#00e676] text-[#022c1b] font-extrabold shadow-[0_0_18px_rgba(0,230,118,0.5)]"
                     : isPurple
-                      ? "bg-gradient-to-r from-[#9333ea] to-[#a855f7] text-white font-bold shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+                      ? "bg-[#fbbf24] text-[#78350f] font-bold shadow-sm"
                       : isKinetic
                         ? "bg-[#0088cc] text-white font-bold shadow-[0_0_12px_rgba(0,136,204,0.4)]"
                         : isDark
@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : isEmerald
                     ? "text-slate-300 hover:text-white hover:bg-[#0c3654]"
                     : isPurple
-                      ? "text-[#d8b4fe] hover:text-white hover:bg-[#32145e]/80"
+                      ? "text-white/85 hover:text-white hover:bg-white/20"
                       : isKinetic
                         ? "text-slate-300 hover:text-white hover:bg-[#2a313a]"
                         : isDark
