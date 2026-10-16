@@ -135,3 +135,30 @@
 .hover\:shadow-\[0_12px_25px_rgba\(0\,0\,0\,0.5\)\,0_0_15px_rgba\(168\,85\,247\,0.3\)\]:hover {
   box-shadow: 0 12px 25px rgba(120, 90, 20, 0.15);
 }
+
+/* ---- Quadro de ranking e demais cartões roxos escuros ---- */
+.bg-\[\#240f47\],
+.bg-\[\#2e105e\],
+.bg-\[\#1c0b3d\],
+.bg-\[\#291054\],
+.bg-\[\#210c44\],
+.bg-\[\#2b1057\] {
+  background-color: #ffffff;
+}
+
+.hover\:bg-\[\#32145e\]:hover,
+.hover\:bg-\[\#2b1057\]:hover {
+  background-color: #f0fdfa;
+}
+
+/* Degradês roxos escuros -> degradê claro creme/branco */
+.from-\[\#240f47\] { --tw-gradient-from: #ffffff; --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)); }
+.via-\[\#2f135b\] { --tw-gradient-via: #fdf6e9; }
+.to-\[\#1e0a3c\] { --tw-gradient-to: #fef3c7; }
+.from-\[\#240c49\] { --tw-gradient-from: #ffffff; --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)); }
+.via-\[\#320f5c\] { --tw-gradient-via: #fdf6e9; }
+.to-\[\#1a0733\] { --tw-gradient-to: #fef3c7; }
+
+.border-\[\#381665\] {
+  border-color: #e9e2cf;
+}
