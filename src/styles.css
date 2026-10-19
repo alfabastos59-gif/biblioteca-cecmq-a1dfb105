@@ -132,10 +132,6 @@
   --tw-gradient-to: #0d9488;
 }
 
-/* Sombras fortes de brilho escuro viram sombras suaves */
-.hover\:shadow-\[0_12px_25px_rgba\(0\,0\,0\,0.5\)\,0_0_15px_rgba\(168\,85\,247\,0.3\)\]:hover {
-  box-shadow: 0 12px 25px rgba(120, 90, 20, 0.15);
-}
 
 /* ---- Quadro de ranking e demais cartões roxos escuros ---- */
 .bg-\[\#240f47\],
