@@ -253,7 +253,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
                           isEmerald
                             ? "text-white group-hover:text-[#00e676]"
                             : isPurple
-                              ? "text-white group-hover:text-[#c084fc]"
+                              ? "text-slate-900 group-hover:text-[#0d9488]"
                               : isDark
                                 ? "text-white group-hover:text-[#1dbb64]"
                                 : "text-slate-900 group-hover:text-[#23c65e]"
