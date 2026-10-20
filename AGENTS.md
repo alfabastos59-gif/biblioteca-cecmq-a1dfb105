@@ -10,3 +10,5 @@
 > the editor, so keep the branch in a working state.
 
 <!-- LOVABLE:END -->
+
+- Restore imported application source independently of deployment configuration and credentials; this preserves the source experience without replacing the managed runtime or leaking secrets.
