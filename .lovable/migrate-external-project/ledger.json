@@ -1,0 +1,13 @@
+{
+  "source": "biblioteca-cecmq-44974306-main.zip",
+  "capabilities": [
+    {"capability":"application code and original purple appearance","source":"uploaded archive","outcome":"restore","status":"in_progress","next_action":"restore and verify public screens"},
+    {"capability":"schema and application records","source":"existing Lovable Cloud connection; archive contains historical records schema","outcome":"preserve existing connection without changing live records","status":"pending_verification","next_action":"verify existing connection; obtain record export if unavailable"},
+    {"capability":"user identities and authorization","source":"source application administrator and student flows","outcome":"preserve source behavior","status":"pending_verification","next_action":"authenticated account required for private-flow verification"},
+    {"capability":"uploaded file bytes and covers","source":"bundled media and source asset pointers","outcome":"preserve","status":"pending_verification","next_action":"check referenced assets"},
+    {"capability":"Quitério AI provider and public endpoints","source":"source chat and cover routes","outcome":"preserve","status":"pending_verification","next_action":"exercise public chat and cover paths"},
+    {"capability":"callbacks webhooks schedules","source":"archive inspection","outcome":"none detected","status":"not_applicable","next_action":null},
+    {"capability":"secrets","source":"current secure environment; archive .env excluded","outcome":"do not import credentials","status":"pending_verification","next_action":"verify provider responses without displaying keys"},
+    {"capability":"publication cutover","source":"current Lovable published URL","outcome":"publish requested original version","status":"pending","next_action":"check security and request deployment after verification"}
+  ]
+}
