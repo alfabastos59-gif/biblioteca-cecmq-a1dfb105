@@ -12,3 +12,4 @@
 <!-- LOVABLE:END -->
 
 - Restore imported application source independently of deployment configuration and credentials; this preserves the source experience without replacing the managed runtime or leaking secrets.
+- The public authors directory uses a separate content route and a sanitized static dataset with CDN-hosted portraits; it must not overwrite administrative author records or require a login to browse.
