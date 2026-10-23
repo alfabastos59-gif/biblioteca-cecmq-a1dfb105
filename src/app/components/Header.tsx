@@ -1,5 +1,7 @@
 // @ts-nocheck
 import React from "react";
+import { Link } from '@tanstack/react-router';
+import { Button } from '@/components/ui/button';
 import {
   Menu,
   X,
@@ -132,6 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
                       : "bg-slate-100 border-slate-200"
             }`}
           >
+            <Button asChild variant="ghost" className="author-control"><Link to="/autores">Autores</Link></Button>
             <button
               id="nav-inicio"
               onClick={() => setActiveTab("inicio")}
@@ -542,6 +545,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="grid grid-cols-2 gap-2 mb-3">
+            <Button asChild variant="ghost" className="author-control justify-start"><Link to="/autores" onClick={() => setMobileMenuOpen(false)}>Autores</Link></Button>
             <button
               onClick={() => {
                 setActiveTab("inicio");
