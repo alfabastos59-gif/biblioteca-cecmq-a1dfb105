@@ -1,5 +1,5 @@
 # Original archive publication
-- [ ] Create the public authors page from banco_autores_pensador-2.json with mapped photos, biographies, and quotations.
+- [x] Create the public authors page from banco_autores_pensador-2.json with mapped photos, biographies, and quotations; verified search, nationality filter, profile dialog, and mobile layout.
 - [ ] Restore the uploaded application's original screens and behavior.
 - [ ] Verify public screens, assets, and publication security checks.
 - [ ] Request publication of the restored version.
