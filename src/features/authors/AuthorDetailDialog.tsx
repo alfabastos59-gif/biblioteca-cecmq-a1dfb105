@@ -39,7 +39,7 @@ export function AuthorDetailDialog({ author, onClose }: AuthorDetailDialogProps)
                   .filter((quote, i, all) => quote && all.indexOf(quote) === i)
                   .map((quote, i) => (
                     <blockquote key={i} className="border-l-2 border-author-highlight pl-4 text-sm leading-relaxed">
-                      “{quote}"
+                      “{quote}”
                       <cite className="mt-2 block text-xs not-italic text-author-muted">
                         {author.name} · {author.quoteSource}
                       </cite>
