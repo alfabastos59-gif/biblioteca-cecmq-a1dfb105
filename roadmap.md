@@ -5,3 +5,8 @@
 - [ ] Verify public screens, assets, and publication security checks.
 - [ ] Request publication of the restored version.
 - [ ] Verify authenticated data flows (requires an available account and data access).
+
+# Standalone authors page package
+- [x] Move the authors theme out of src/styles.css into src/features/authors/authors.css so the page module is self-contained.
+- [ ] Build the ZIP with the authors page source, data, portraits, README (file structure + integration steps), and dependency list; verify entries and copy to Files.
+- [ ] Verify the /autores page still renders correctly after the theme move (search, nationality filter, detail dialog).
